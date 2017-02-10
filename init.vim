@@ -7,12 +7,14 @@ call dein#add('Shougo/denite.nvim', {'merged': 0})
 call dein#add('Shougo/neomru.vim', {'merged': 0})
 call dein#add('Shougo/neosnippet', {'merged': 0})
 call dein#add('Shougo/neosnippet-snippets', {'merged': 0})
-call dein#add('Shougo/unite.vim', {'merged': 0})
+" call dein#add('Shougo/unite.vim', {'merged': 0})
+call dein#add('Shougo/denite.vim', {'merged': 0})
 call dein#add('cocopon/vaffle.vim', {'merged': 0})
 call dein#add('fuenor/qfixgrep', {'merged': 0})
 call dein#add('thinca/vim-qfreplace', {'merged': 0})
 call dein#add('thinca/vim-quickrun', {'merged': 0})
 call dein#add('tpope/vim-fugitive', {'merged': 0})
+call dein#add('mattn/emmet-vim', {'merged': 0})
 call dein#add('joonty/vdebug', {
     \ 'disabled': has('python'),
     \ 'merged': 0
@@ -68,7 +70,14 @@ if dein#tap('unite.vim')
     let g:unite_enable_start_insert = 1
     nmap <leader>u [unite]
     nnoremap [unite]m :<c-u>Unite neomru/file
+    nnoremap [unite]f :<c-u>Unite file_rec
     nnoremap [unite]g :<c-u>Unite file_rec/git
+endif
+if dein#tap('denite.vim')
+    nmap <leader>d [denite]
+    nnoremap [denite]m :<c-u>Denite file_mru
+    nnoremap [denite]f :<c-u>Denite ffile_rec
+    nnoremap [denite]g :<c-u>Denite ffile_rec/git
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
