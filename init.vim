@@ -8,7 +8,6 @@ call dein#add('Shougo/neomru.vim', {'merged': 0})
 call dein#add('Shougo/neosnippet', {'merged': 0})
 call dein#add('Shougo/neosnippet-snippets', {'merged': 0})
 " call dein#add('Shougo/unite.vim', {'merged': 0})
-call dein#add('Shougo/denite.vim', {'merged': 0})
 call dein#add('cocopon/vaffle.vim', {'merged': 0})
 call dein#add('fuenor/qfixgrep', {'merged': 0})
 call dein#add('thinca/vim-qfreplace', {'merged': 0})
@@ -73,7 +72,7 @@ if dein#tap('unite.vim')
     nnoremap [unite]f :<c-u>Unite file_rec
     nnoremap [unite]g :<c-u>Unite file_rec/git
 endif
-if dein#tap('denite.vim')
+if dein#tap('denite.nvim')
     nmap <leader>d [denite]
     nnoremap [denite]m :<c-u>Denite file_mru
     nnoremap [denite]f :<c-u>Denite ffile_rec
@@ -145,10 +144,10 @@ let g:loaded_vimball = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_getscript = 1
 let g:loaded_getscriptPlugin = 1
-let g:loaded_netrw = 1 " #netrw必須 1/2
-let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
-let g:loaded_netrwSettings = 1
-let g:loaded_netrwFileHandlers = 1
+" let g:loaded_netrw = 1 " #netrw必須 1/2
+" let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
+" let g:loaded_netrwSettings = 1
+" let g:loaded_netrwFileHandlers = 1
 " netrw
 let g:netrw_liststyle = 3
 " let php_sql_query = 1
