@@ -18,6 +18,7 @@ call dein#add('joonty/vdebug', {
     \ 'disabled': has('python'),
     \ 'merged': 0
     \ })
+call dein#end()
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
             \ 'cpp' : {
@@ -102,7 +103,6 @@ if dein#tap('vdebug')
         \ 'eval_under_cursor' : '<F12>',
     \ }
 endif
-call dein#end()
 filetype plugin indent on
 syntax enable
 nnoremap <leader>fp<CR> :<C-u>let @+ = expand("%:p")\|echo @+<CR>|"
