@@ -5,15 +5,16 @@ set rtp^=~/.cache/plugin/dein.vim
 call dein#begin(expand('~/.cache/dein'))
 call dein#add('Shougo/denite.nvim', {'merged': 0})
 call dein#add('Shougo/neomru.vim', {'merged': 0})
-call dein#add('Shougo/neosnippet', {'merged': 0})
-call dein#add('Shougo/neosnippet-snippets', {'merged': 0})
+" call dein#add('Shougo/neosnippet', {'merged': 0})
+" call dein#add('Shougo/neosnippet-snippets', {'merged': 0})
 " call dein#add('Shougo/unite.vim', {'merged': 0})
-call dein#add('cocopon/vaffle.vim', {'merged': 0})
+" call dein#add('cocopon/vaffle.vim', {'merged': 0})
 call dein#add('fuenor/qfixgrep', {'merged': 0})
 call dein#add('thinca/vim-qfreplace', {'merged': 0})
 call dein#add('thinca/vim-quickrun', {'merged': 0})
 call dein#add('tpope/vim-fugitive', {'merged': 0})
 call dein#add('mattn/emmet-vim', {'merged': 0})
+call dein#add('vim-scripts/Align', {'merged': 0})
 call dein#add('joonty/vdebug', {
     \ 'disabled': has('python'),
     \ 'merged': 0
