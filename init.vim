@@ -76,8 +76,6 @@ endif
 if dein#tap('denite.nvim')
     nmap <leader>d [denite]
     nnoremap [denite]m :<c-u>Denite file_mru
-    nnoremap [denite]f :<c-u>Denite ffile_rec
-    nnoremap [denite]g :<c-u>Denite ffile_rec/git
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
