@@ -1,9 +1,11 @@
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['denite.nvim']
-[[plugins]]
 repo = 'thinca/vim-quickrun'
-on_cmd = ['QuickRun']
+on_cmd = 'QuickRun'
 [[plugins]]
 repo = 'vim-scripts/Align'
 on_cmd = 'Align'
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'denite.nvim'
