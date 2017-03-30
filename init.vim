@@ -111,8 +111,9 @@ if dein#tap('vdebug')
 endif
 filetype plugin indent on
 syntax enable
-nnoremap <leader>fp<CR> :<C-u>let @+ = expand("%:p")\|echo @+<CR>|"
-nnoremap <leader>ft<CR> :<C-u>let @+ = expand("%:t")\|echo @+<CR>|"
+nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
+nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
+nnoremap <leader>cg :<C-u>cd %:h\|cd `git rev-parse --show-toplevel`|"
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
 nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"
