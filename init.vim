@@ -1,11 +1,9 @@
-" dein install
+" dein
 let s:dein_repo_dir = expand('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
 exec 'set rtp+=' . s:dein_repo_dir
-
-" dein
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
@@ -13,11 +11,6 @@ if dein#load_state('~/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
-if dein#check_install()
-  call dein#install()
-endif
-
-" dein tap
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
                 \ 'cpp' : {
@@ -77,11 +70,6 @@ if dein#tap('denite.nvim')
     nnoremap [denite]m :<c-u>Denite file_mru
     nnoremap [denite]f :<c-u>Denite file_rec
     nnoremap [denite]g :<c-u>Denite file_rec/git
-    call denite#custom#var('file_rec', 'command',
-                \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
-    call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-    call denite#custom#var('file_rec/git', 'command',
-                \ ['git', 'ls-files', '-co', '--exclude-standard'])
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
@@ -106,6 +94,9 @@ if dein#tap('vdebug')
                 \ 'get_context'       : '<S-F12>',
                 \ 'eval_under_cursor' : '<F12>',
                 \ }
+endif
+if dein#check_install()
+  call dein#install()
 endif
 
 " not dein
