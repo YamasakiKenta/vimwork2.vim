@@ -6,9 +6,13 @@ repo = 'vim-scripts/Align'
 on_cmd = 'Align'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
 hook_post_source = '''
-call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-call denite#custom#var('file_rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+    call denite#custom#var('file_rec', 'command',
+                \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
+    call denite#custom#var('file_rec/git', 'command',
+                \ ['git', 'ls-files', '-co', '--exclude-standard'])
+    call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 '''
 [[plugins]]
 repo = 'Shougo/neomru.vim'
