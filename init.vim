@@ -13,6 +13,10 @@ if dein#load_state('~/.cache/dein')
 endif
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
+                \ 'cs' : {
+                \ 'hook/output_encode/enable' : 1,
+                \ 'hook/output_encode/encoding' : 'sjis',
+                \ }
                 \ 'cpp' : {
                 \ 'hook/output_encode/enable' : 1,
                 \ 'hook/output_encode/encoding' : 'sjis',
@@ -22,11 +26,6 @@ if dein#tap('vim-quickrun')
                 \ 'hook/output_encode/enable' : 1,
                 \ 'hook/output_encode/encoding' : 'sjis',
                 \ 'type': 'c/gcc',
-                \ },
-                \ 'cs' : {
-                \ 'command': 'dmcs',
-                \ 'exec': ['%c %o %s -out:%s:p:r.exe', 'mono %s:p:r.exe %a', 'rm -f %s:p:r.exe'],
-                \ 'tempfile': '%{tempname()}.cs',
                 \ },
                 \ 'java' : {
                 \ 'hook/output_encode/enable' : 1,
