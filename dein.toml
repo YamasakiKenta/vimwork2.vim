@@ -1,2 +1,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+[[plugins]]
+repo = 'tpope/vim-fugitive'

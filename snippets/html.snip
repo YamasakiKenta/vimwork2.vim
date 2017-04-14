@@ -1,0 +1,106 @@
+include javascript/*
+include css/*
+snippet onsen
+alias ons
+    <!--
+    <link rel='stylesheet' href='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/css/onsenui.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/css/onsen-css-components.css' />
+    <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/js/angular/angular.min.js'></script>
+    <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/js/onsenui.min.js'></script>
+    -->
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsenui.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsen-css-components.min.css' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/js/onsenui.min.js'></script>
+snippet bootstrap3
+alias bs bootstrap bs3
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+snippet jquery
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+snippet prefixfree
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+snippet viewport
+alias vp view
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+snippet knockout
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+snippet highstock
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+snippet leaflet
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <div id="map" style="height:100%;width:100%"></div>
+    <style>
+        body{padding:0:margin:0;}
+        html,body,#map{height:100%;width:100%;}
+    </style>
+    <script>
+        var map = L.map('map');
+        L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+          attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+        }).addTo(map);
+        map.setView([35.3622222, 138.7313889], 5);
+    </script>
+snippet jquery-ui
+alias jqueryui
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+snippet d3
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+snippet angularJS
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+snippet google-chart
+    <script src="https://www.google.com/jsapi"></script>
+snippet google-map
+    <script src="https://maps.google.com/maps/api/js?v=3&sensor=false"></script>
+snippet jqgrid
+    <link rel="stylesheet" href="https://js.cybozu.com/jqgrid/v4.8.2/ui.jqgrid.css" />
+    <script src="https://js.cybozu.com/jqgrid/v4.8.2/jquery.jqGrid.min.js"></script>
+    <script src="https://js.cybozu.com/jqgrid/v4.8.2/grid.locale-ja.js"></script>
+snippet enchant
+    <script src="https://enchantjs.com/live-sample/enchant.js"></script>
+snippet phaser
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/phaser/2.1.3/phaser.js"></script>
+snippet datatables
+alias datatable
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+snippet datatable-bs
+    <link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.css" />
+    <script src="https://cdn.datatables.net/plug-ins/f2c75b7247b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+snippet normal
+    <link rel="stylesheet" href="https://normalize-css.googlecode.com/svn/trunk/normalize.css" />
+snippet snapsvg
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+snippet codemirror
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/codemirror.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/codemirror.min.js"></script>
+snippet backbone
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+snippet TweenMax
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+snippet bootstrap4
+alias bs4
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+snippet magjs
+alias mag
+    <script src="https://rawgit.com/magnumjs/mag.js/master/mag.min.js"></script>
+snippet riot
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.4.1/riot+compiler.min.js"></script>
+snippet materialize
+alias mate
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <Script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>

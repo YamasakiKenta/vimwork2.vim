@@ -11,42 +11,56 @@ if dein#load_state('~/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
+if dein#tap('neosnippet.vim')
+    let g:neosnippet#snippets_directory = expand('~/.cache/plugin/vimwork2.vim/snippets')
+    imap <C-Space> <PLUG>(neosnippet_expand_or_jump)
+endif
+if dein#tap('emmet-vim')
+    let g:user_emmet_settings = {
+                \ 'variables': {
+                \ 'lang' : 'ja'
+                \ }
+                \ }
+    imap <expr><TAB>
+                \ emmet#isExpandable()? emmet#expandAbbrIntelligent("\<tab>")
+                \ :"\<TAB>"
+endif
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
-                \ 'cs' : {
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'sjis',
-                \ }
-                \ 'cpp' : {
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'sjis',
-                \ 'type': 'c/gcc',
-                \ },
-                \ 'c' : {
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'sjis',
-                \ 'type': 'c/gcc',
-                \ },
-                \ 'java' : {
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'sjis',
-                \ },
-                \ 'php' : {
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'utf-8',
-                \ },
-                \ '_' : {
-                \ 'hook/time/enable' : 1,
-                \ 'hook/output_encode/enable' : 1,
-                \ 'hook/output_encode/encoding' : 'sjis',
-                \ 'debug': 'x',
-                \ },
-                \ 'vb' : {
-                \ 'command': 'cscript',
-                \ 'cmdopt': '//Nologo',
-                \ 'tempfile': '{tempname()}.vbs',
-                \ }
-                \ }
+        \ 'cs' : {
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'sjis',
+        \ },
+        \ 'cpp' : {
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'sjis',
+            \ 'type': 'c/gcc',
+        \ },
+        \ 'c' : {
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'sjis',
+            \ 'type': 'c/gcc',
+        \ },
+        \ 'java' : {
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'sjis',
+        \ },
+        \ 'php' : {
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'utf-8',
+        \ },
+        \ '_' : {
+            \ 'hook/time/enable' : 1,
+            \ 'hook/output_encode/enable' : 1,
+            \ 'hook/output_encode/encoding' : 'sjis',
+            \ 'debug': 'x',
+        \ },
+        \ 'vb' : {
+            \ 'command': 'cscript',
+            \ 'cmdopt': '//Nologo',
+            \ 'tempfile': '{tempname()}.vbs',
+        \ }
+    \ }
 endif
 if dein#tap('qfixgrep')
     let QFixWin_EnableMode = 1
