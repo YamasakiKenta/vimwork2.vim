@@ -144,7 +144,7 @@ let g:loaded_getscriptPlugin = 1
 " let g:loaded_netrwSettings = 1
 " let g:loaded_netrwFileHandlers = 1
 " netrw
-let g:netrw_liststyle = 3
+" let g:netrw_liststyle = 3
 " let php_sql_query = 1
 " let php_baselib = 1
 " let php_htmlInStrings = 1
