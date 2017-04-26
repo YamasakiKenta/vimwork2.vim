@@ -8,3 +8,5 @@ repo = 'Shougo/neosnippet.vim'
 repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'cespare/vim-toml'
