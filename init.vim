@@ -80,9 +80,13 @@ if dein#tap('unite.vim')
 endif
 if dein#tap('denite.nvim')
     nmap <leader>d [denite]
+    nnoremap [denite] :<c-u>Denite
+    nnoremap [denite]b :<c-u>Denite buffer
     nnoremap [denite]m :<c-u>Denite file_mru
     nnoremap [denite]f :<c-u>Denite file_rec
     nnoremap [denite]g :<c-u>Denite file_rec/git
+    call denite#custom#map('insert', "<Up>", '<denite:move_to_previous_line>', 'noremap')
+    call denite#custom#map('insert', "<Down>", '<denite:move_to_next_line>', 'noremap')
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
