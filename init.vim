@@ -180,7 +180,7 @@ set fdm=marker
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set list lcs=tab:.\ |
+set list lcs=tab:>\ |
 set nf=""
 set viminfo+=n~/.cache/viminfo
 " set wildmode=longest:full,full
