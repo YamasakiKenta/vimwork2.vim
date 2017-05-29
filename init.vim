@@ -83,8 +83,10 @@ if dein#tap('denite.nvim')
     nnoremap [denite] :<c-u>Denite
     nnoremap [denite]b :<c-u>Denite buffer
     nnoremap [denite]m :<c-u>Denite file_mru
-    nnoremap [denite]f :<c-u>Denite file_rec:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
-    nnoremap [denite]g :<c-u>Denite file_rec/git:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
+    " nnoremap [denite]f :<c-u>Denite file_rec:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
+    " nnoremap [denite]g :<c-u>Denite file_rec/git:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
+    nnoremap [denite]f :<c-u>Denite file_rec
+    nnoremap [denite]g :<c-u>Denite file_rec/git
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
