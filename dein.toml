@@ -10,3 +10,5 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'cespare/vim-toml'
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
