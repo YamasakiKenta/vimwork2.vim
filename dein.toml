@@ -12,5 +12,7 @@ repo = 'tpope/vim-fugitive'
 repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
+# [[plugins]]
+# repo = 'ctrlpvim/ctrlp.vim'
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
+repo = 'lambdalisue/gina.vim'
