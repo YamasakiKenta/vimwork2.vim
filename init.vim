@@ -168,25 +168,25 @@ let g:loaded_vimball = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_getscript = 1
 let g:loaded_getscriptPlugin = 1
-" let g:loaded_netrw = 1 " #netrw必須 1/2
-" let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
-" let g:loaded_netrwSettings = 1
-" let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrw = 1 " #netrw必須 1/2
+let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
 
 " netrw
 " let g:netrw_liststyle = 3
 
 " php
-" let php_sql_query = 1
-" let php_baselib = 1
-" let php_htmlInStrings = 1
-" let php_oldStyle = 1
-" let php_asp_tags = 1
-" let php_noShortTags = 1
-" let php_parent_error_close = 1
-" let php_parent_error_open = 1
-" let php_folding = 1
-" let php_sync_method = -1
+let php_sql_query = 1
+let php_baselib = 1
+let php_htmlInStrings = 1
+let php_oldStyle = 1
+let php_asp_tags = 1
+let php_noShortTags = 1
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+let php_folding = 1
+let php_sync_method = -1
 
 set autoread
 set ve=block
