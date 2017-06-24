@@ -7,7 +7,7 @@ exec 'set rtp+=' . s:dein_repo_dir
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
-  call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein_lazy.toml'), {'lazy': 1})
+  " call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein_lazy.toml'), {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
@@ -17,13 +17,13 @@ if dein#tap('neosnippet.vim')
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
-                \ 'variables': {
-                \ 'lang' : 'ja'
-                \ }
-                \ }
-    imap <expr><TAB>
-                \ emmet#isExpandable()? emmet#expandAbbrIntelligent("\<tab>")
-                \ :"\<TAB>"
+        \ 'variables': {
+            \ 'lang' : 'ja'
+        \ }
+    \ }
+    imap <expr><TAB> emmet#isExpandable() ?
+        \ emmet#expandAbbrIntelligent("\<tab>")
+        \ :"\<TAB>"
 endif
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
@@ -164,6 +164,7 @@ function! s:addSearch(...)
         let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
     endif
 endfunction
+
 " http://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 let g:loaded_gzip = 1
 let g:loaded_tar = 1
@@ -180,6 +181,7 @@ let g:loaded_getscriptPlugin = 1
 " let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
 " let g:loaded_netrwSettings = 1
 " let g:loaded_netrwFileHandlers = 1
+
 " netrw
 " let g:netrw_liststyle = 3
 " let php_sql_query = 1
