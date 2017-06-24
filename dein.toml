@@ -4,6 +4,13 @@
 # repo = 'ctrlpvim/ctrlp.vim'
 # [[plugins]]
 # repo = 'Shougo/unite.vim'
+# call dein#add('fuenor/qfixgrep')
+# call dein#add('fuenor/qfixgrep')
+# call dein#add('thinca/vim-qfreplace')
+# call dein#add('thinca/vim-quickrun')
+# call dein#add('tpope/vim-fugitive')
+# call dein#add('mattn/emmet-vim')
+# call dein#add('vim-scripts/Align')
 [[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
