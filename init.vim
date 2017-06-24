@@ -184,6 +184,8 @@ let g:loaded_getscriptPlugin = 1
 
 " netrw
 " let g:netrw_liststyle = 3
+
+" php
 " let php_sql_query = 1
 " let php_baselib = 1
 " let php_htmlInStrings = 1
@@ -194,6 +196,7 @@ let g:loaded_getscriptPlugin = 1
 " let php_parent_error_open = 1
 " let php_folding = 1
 " let php_sync_method = -1
+
 set autoread
 set ve=block
 set nowrap
