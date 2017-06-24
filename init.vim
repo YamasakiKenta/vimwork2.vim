@@ -206,7 +206,6 @@ set expandtab
 set list lcs=tab:.\ |
 set nf=""
 set viminfo+=n~/.cache/viminfo
-" set wildmode=longest:full,full
 set backupdir=~/.cache/bak
 if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir))
