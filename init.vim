@@ -11,6 +11,11 @@ if dein#load_state('~/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
+if dein#tap('qfixgrep')
+    let QFixWin_EnableMode = 1
+    let g:QFixWin_QuickFixTitleReg = '\cQuickfix'
+    let g:QFixWin_LocationListTitleReg = '\cLocation'
+endif
 if dein#tap('neosnippet.vim')
     let g:neosnippet#snippets_directory = expand('~/.cache/plugin/vimwork2.vim/snippets')
     imap <C-Space> <PLUG>(neosnippet_expand_or_jump)

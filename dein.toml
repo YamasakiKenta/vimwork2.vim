@@ -16,3 +16,5 @@ repo = 'thinca/vim-qfreplace'
 # repo = 'ctrlpvim/ctrlp.vim'
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+[[plugins]]
+repo = 'fuenor/qfixgrep'
