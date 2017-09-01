@@ -7,7 +7,6 @@ exec 'set rtp+=' . s:dein_repo_dir
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
-  call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein_lazy.toml'), {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
@@ -22,13 +21,13 @@ if dein#tap('neosnippet.vim')
 endif
 if dein#tap('emmet-vim')
     let g:user_emmet_settings = {
-                \ 'variables': {
-                \ 'lang' : 'ja'
-                \ }
-                \ }
-    imap <expr><TAB>
-                \ emmet#isExpandable()? emmet#expandAbbrIntelligent("\<tab>")
-                \ :"\<TAB>"
+        \ 'variables': {
+            \ 'lang' : 'ja'
+        \ }
+    \ }
+    imap <expr><TAB> emmet#isExpandable() ?
+        \ emmet#expandAbbrIntelligent("\<tab>")
+        \ :"\<TAB>"
 endif
 if dein#tap('vim-quickrun')
     let g:quickrun_config = {
@@ -88,23 +87,15 @@ if dein#tap('denite.nvim')
     nnoremap [denite] :<c-u>Denite
     nnoremap [denite]b :<c-u>Denite buffer
     nnoremap [denite]m :<c-u>Denite file_mru
-    " nnoremap [denite]f :<c-u>Denite file_rec:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
-    " nnoremap [denite]g :<c-u>Denite file_rec/git:<C-R>=substitute(expand('%:p:h'),'[\: ]','\\\0','g')<CR>
     nnoremap [denite]f :<c-u>Denite file_rec
     nnoremap [denite]g :<c-u>Denite file_rec/git
 endif
 if dein#tap('ctrlp.vim')
-    " キャッシュディレクトリ
     let g:ctrlp_cache_dir = expand('~/.cache/ctrlp')
-    " キャッシュを終了時に削除しない
     let g:ctrlp_clear_cache_on_exit = 0
-    " 遅延再描画
     let g:ctrlp_lazy_update = 1
-    " ルートパスと認識させるためのファイル
     let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
-    " CtrlPのウィンドウ最大高さ
     let g:ctrlp_max_height = 20
-    " 無視するディレクトリ
     let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v[\/]\.(git|hg|svn)$',
       \ 'file': '\v\.(exe|so|dll)$',
@@ -169,6 +160,7 @@ function! s:addSearch(...)
         let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
     endif
 endfunction
+
 " http://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 let g:loaded_gzip = 1
 let g:loaded_tar = 1
@@ -181,22 +173,26 @@ let g:loaded_vimball = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_getscript = 1
 let g:loaded_getscriptPlugin = 1
-" let g:loaded_netrw = 1 " #netrw必須 1/2
-" let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
-" let g:loaded_netrwSettings = 1
-" let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrw = 1 " #netrw必須 1/2
+let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
+
 " netrw
 " let g:netrw_liststyle = 3
-" let php_sql_query = 1
-" let php_baselib = 1
-" let php_htmlInStrings = 1
-" let php_oldStyle = 1
-" let php_asp_tags = 1
-" let php_noShortTags = 1
-" let php_parent_error_close = 1
-" let php_parent_error_open = 1
-" let php_folding = 1
-" let php_sync_method = -1
+
+" php
+let php_sql_query = 1
+let php_baselib = 1
+let php_htmlInStrings = 1
+let php_oldStyle = 1
+let php_asp_tags = 1
+let php_noShortTags = 1
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+let php_folding = 1
+let php_sync_method = -1
+
 set autoread
 set ve=block
 set nowrap
@@ -209,7 +205,6 @@ set expandtab
 set list lcs=tab:.\ |
 set nf=""
 set viminfo+=n~/.cache/viminfo
-" set wildmode=longest:full,full
 set backupdir=~/.cache/bak
 if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir))
@@ -245,4 +240,3 @@ endfunction
 
 filetype plugin indent on
 syntax enable
-

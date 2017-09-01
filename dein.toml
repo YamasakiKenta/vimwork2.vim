@@ -12,9 +12,28 @@ repo = 'tpope/vim-fugitive'
 repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
-# [[plugins]]
-# repo = 'ctrlpvim/ctrlp.vim'
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
 [[plugins]]
 repo = 'fuenor/qfixgrep'
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_cmd = 'QuickRun'
+[[plugins]]
+repo = 'vim-scripts/Align'
+on_cmd = 'Align'
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_post_source = '''
+    call denite#custom#var('file_rec', 'command',
+                \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
+    call denite#custom#var('file_rec/git', 'command',
+                \ ['git', 'ls-files', '-co', '--exclude-standard'])
+    call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+    call denite#custom#map('insert', '<Up>', '<denite:move_to_previous_line>', 'noremap')
+    call denite#custom#map('insert', '<Down>', '<denite:move_to_next_line>', 'noremap')
+'''
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'denite.nvim'
