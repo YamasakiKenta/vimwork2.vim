@@ -161,6 +161,8 @@ function! s:addSearch(...)
     endif
 endfunction
 
+" finish
+
 " http://lambdalisue.hatenablog.com/entry/2015/12/25/000046
 let g:loaded_gzip = 1
 let g:loaded_tar = 1
@@ -173,14 +175,14 @@ let g:loaded_vimball = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_getscript = 1
 let g:loaded_getscriptPlugin = 1
-let g:loaded_netrw = 1 " #netrw必須 1/2
-let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
+" let g:loaded_netrw = 1 " #netrw必須 1/2
+" let g:loaded_netrwPlugin = 1 " #netrw必須 2/2
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 
 " netrw
 " let g:netrw_liststyle = 3
-
+"
 " php
 let php_sql_query = 1
 let php_baselib = 1
@@ -204,8 +206,11 @@ set shiftwidth=4
 set expandtab
 set list lcs=tab:.\ |
 set nf=""
-set viminfo+=n~/.cache/viminfo
 set backupdir=~/.cache/bak
+if !has('nvim')
+    set viminfo+=n~/.cache/viminfo
+end if
+
 if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir))
 endif
