@@ -209,7 +209,7 @@ set nf=""
 set backupdir=~/.cache/bak
 if !has('nvim')
     set viminfo+=n~/.cache/viminfo
-end if
+endif
 
 if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir))
