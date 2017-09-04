@@ -184,16 +184,16 @@ let g:loaded_netrwFileHandlers = 1
 " let g:netrw_liststyle = 3
 "
 " php
-let php_sql_query = 1
-let php_baselib = 1
-let php_htmlInStrings = 1
-let php_oldStyle = 1
-let php_asp_tags = 1
-let php_noShortTags = 1
-let php_parent_error_close = 1
-let php_parent_error_open = 1
-let php_folding = 1
-let php_sync_method = -1
+" let php_sql_query = 1
+" let php_baselib = 1
+" let php_htmlInStrings = 1
+" let php_oldStyle = 1
+" let php_asp_tags = 1
+" let php_noShortTags = 1
+" let php_parent_error_close = 1
+" let php_parent_error_open = 1
+" let php_folding = 1
+" let php_sync_method = -1
 
 set autoread
 set ve=block
@@ -242,6 +242,8 @@ function! SetGUI()
     source $VIMRUNTIME/menu.vim
     set vb t_vb=
 endfunction
+
+source $VIMRUNTIME/macros/matchit.vim
 
 filetype plugin indent on
 syntax enable
