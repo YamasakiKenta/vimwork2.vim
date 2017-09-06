@@ -95,3 +95,5 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_source = 'denite.nvim'
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
