@@ -13,19 +13,14 @@ repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
 [[plugins]]
-repo = 'lambdalisue/gina.vim'
-[[plugins]]
 repo = 'fuenor/qfixgrep'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-on_cmd = 'QuickRun'
 [[plugins]]
 repo = 'vim-scripts/Align'
-on_cmd = 'Align'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-on_cmd = 'Denite'
-hook_post_source = '''
+hook_add = '''
     call denite#custom#var('file_rec', 'command',
                 \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
     call denite#custom#var('file_rec/git', 'command',
