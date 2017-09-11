@@ -22,10 +22,13 @@ alias bs bootstrap bs3
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-
-snippet jquery
+snippet jq
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+snippet jq2
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+snippet jq3
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 snippet prefixfree
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 snippet viewport
@@ -37,20 +40,31 @@ snippet highstock
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 snippet leaflet
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <div id="map" style="height:100%;width:100%"></div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="UTF-8">
+    <title>GSI Tiles on Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
     <style>
-        body{padding:0:margin:0;}
-        html,body,#map{height:100%;width:100%;}
+      body {padding: 0; margin: 0}
+      html, body, #map {height: 100%; width: 100%;}
     </style>
+    </head>
+
+    <body>
+    <div id="map"></div>
     <script>
-        var map = L.map('map');
-        L.tileLayer('http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
-          attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
-        }).addTo(map);
-        map.setView([35.3622222, 138.7313889], 5);
+    var map = L.map('map');
+    L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+      attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+    }).addTo(map);
+    map.setView([35.3622222, 138.7313889], 5);
     </script>
+    </body>
+    </html>
 snippet jquery-ui
 alias jqueryui
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
