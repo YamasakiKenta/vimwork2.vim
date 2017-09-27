@@ -75,6 +75,9 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'vim-scripts/Align'
+hook_add = '''
+    let g:Align_xstrlen = 3
+'''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
