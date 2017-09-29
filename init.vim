@@ -16,7 +16,7 @@ endif
 
 " not dein
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
-nnoremap <leader>fh :<C-u>let @+ = expand("%:h")\|echo @+|"
+nnoremap <leader>fh :<C-u>let @+ = expand("%:p:h")\|echo @+|"
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
 nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"
