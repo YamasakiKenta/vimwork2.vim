@@ -87,6 +87,7 @@ hook_add = '''
     nnoremap [denite]m :<c-u>Denite file_mru
     nnoremap [denite]f :<c-u>Denite file_rec
     nnoremap [denite]g :<c-u>Denite file_rec/git
+    nnoremap [denite]j :<c-u>Denite jump
     call denite#custom#var('file_rec', 'command',
                 \ ['pt', '--follow', '--nocolor', '--nogroup', '-g:', ''])
     call denite#custom#var('file_rec/git', 'command',
