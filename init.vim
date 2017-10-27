@@ -43,6 +43,13 @@ function! s:addSearch(...)
     endif
 endfunction
 
+" diff
+nnoremap <a-up> [c
+nnoremap <a-down> ]c
+nnoremap <a-left> :diffget<cr>
+nnoremap <a-right> :diffput<cr>
+nnoremap <f5> :diffupdate<cr>
+
 " finish
 
 " http://lambdalisue.hatenablog.com/entry/2015/12/25/000046
