@@ -85,7 +85,7 @@ hook_add = '''
     nnoremap [denite] :<c-u>Denite
     nnoremap [denite]g :<c-u>Denite file_rec/git
     nnoremap [denite]j :<c-u>Denite jump
-    nnoremap [denite]m :<c-u>Denite file_old
+    nnoremap [denite]m :<c-u>Denite file_old buffer
     call denite#custom#var('file_rec/git', 'command',
                 \ ['git', 'ls-files', '-co', '--exclude-standard'])
     call denite#custom#alias('source', 'file_rec/git', 'file_rec')
