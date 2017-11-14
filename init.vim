@@ -27,8 +27,8 @@ nnoremap * :<C-u>set hls<CR>:let @/ = '\<'.expand("<cword>").'\>'\|echo @/<CR>|"
 nnoremap + :<C-u>AddSearch <C-r>=expand("<cword>")<CR><CR>:echo @/<CR>|"
 vnoremap < <gv|"
 vnoremap > >gv|"
-nnoremap go yypC
-nnoremap gO yyPC
+" nnoremap go yypC
+" nnoremap gO yyPC
 vnoremap / "ay/<c-r>a<cr><c-o>|"
 let g:plugin_cmdex_disable = 1
 cnoremap <C-X> <C-R>=<SID>GetBufferDirectory()<CR>
