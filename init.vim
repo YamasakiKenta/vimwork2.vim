@@ -23,6 +23,7 @@ nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"
 nnoremap <C-p> :<C-u>cN<CR>:e<cr>|"
 nnoremap <C-j> j.|"
 nnoremap <C-k> n.|"
+nnoremap <C-@> @q|"
 nnoremap * :<C-u>set hls<CR>:let @/ = '\<'.expand("<cword>").'\>'\|echo @/<CR>|"
 nnoremap + :<C-u>AddSearch <C-r>=expand("<cword>")<CR><CR>:echo @/<CR>|"
 vnoremap < <gv|"
@@ -42,6 +43,7 @@ function! s:addSearch(...)
         let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
     endif
 endfunction
+nnoremap <leader>b<cr> :<c-u>/ oldfiles<home>browse filter /
 
 " diff
 nnoremap <a-up> [c
