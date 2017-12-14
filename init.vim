@@ -15,6 +15,7 @@ if dein#check_install()
 endif
 
 " not dein
+nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
 nnoremap <leader>fg :<C-u>let @+ = getcwd()\|echo @+|"
 nnoremap <S-Space> za|"
@@ -43,7 +44,7 @@ function! s:addSearch(...)
         let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
     endif
 endfunction
-nnoremap <leader>b<cr> :<c-u>/ oldfiles<home>browse filter /
+nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
 
 " diff
 nnoremap <a-up> [c
