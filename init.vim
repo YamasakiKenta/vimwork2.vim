@@ -126,6 +126,7 @@ function! SetGUI()
     set guifont=VL_ゴシック:h10:cSHIFTJIS
     nnoremap <A-Space> :<C-u>simalt ~<CR>|"
     "colo hybrid
+    " colo iceberg
     source $VIMRUNTIME/delmenu.vim
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim

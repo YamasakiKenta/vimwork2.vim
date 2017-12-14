@@ -105,3 +105,5 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'cocopon/vaffle.vim'
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
