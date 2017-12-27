@@ -1,20 +1,18 @@
 " dein
-" let s:dein_repo_dir = expand('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-" if !isdirectory(s:dein_repo_dir)
-"     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-" endif
-" exec 'set rtp+=' . s:dein_repo_dir
-" if dein#load_state('~/.cache/dein')
-"   call dein#begin('~/.cache/dein')
-"   call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
-"   call dein#end()
-"   call dein#save_state()
-" endif
-" if dein#check_install()
-"   call dein#install()
-" endif
-
-set packpath+=~/.cache/plugin/vimwork2.vim/vimfiles
+let s:dein_repo_dir = expand('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+endif
+exec 'set rtp+=' . s:dein_repo_dir
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
+  call dein#end()
+  call dein#save_state()
+endif
+if dein#check_install()
+  call dein#install()
+endif
 
 " not dein
 nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
@@ -118,7 +116,6 @@ aug vimwork
     au BufNewFile,BufRead *.tag setf html
     au BufNewFile,BufRead *.frm setf vb
     au BufNewFile,BufRead *.dcm setf vb
-    au VimEnter * source ~/.cache/plugin/vimwork2.vim/plugin.vim
 aug END
 
 function! SetGUI()
@@ -138,6 +135,9 @@ function! SetGUI()
 endfunction
 
 source $VIMRUNTIME/macros/matchit.vim
+
+" 先に読む必要がある
+let g:indent_guides_enable_on_vim_startup=1
 
 filetype plugin indent on
 syntax enable
