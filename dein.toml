@@ -17,6 +17,9 @@ hook_add = '''
     let g:user_emmet_settings = {
                 \ 'variables': {
                 \ 'lang' : 'ja'
+                \ },
+                \ 'html': {
+                \ 'empty_element_suffix': '/>',
                 \ }
                 \ }
     imap <expr><TAB>
