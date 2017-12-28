@@ -136,8 +136,6 @@ endfunction
 
 source $VIMRUNTIME/macros/matchit.vim
 
-" 先に読む必要がある
-let g:indent_guides_enable_on_vim_startup=1
 
 filetype plugin indent on
 syntax enable
