@@ -136,6 +136,8 @@ endfunction
 
 source $VIMRUNTIME/macros/matchit.vim
 
+" for linux
+set vb t_vb=
 
 filetype plugin indent on
 syntax enable
