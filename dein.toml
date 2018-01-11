@@ -108,5 +108,15 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'cocopon/vaffle.vim'
+hook_add ='''
+    function! s:customize_vaffle_mappings() abort
+        nmap <buffer> <silent> <Left> <Plug>(vaffle-open-parent)
+        nmap <buffer> <silent> <Right> <Plug>(vaffle-open-current)
+    endfunction
+    augroup vimrc_vaffle
+        autocmd!
+        autocmd FileType vaffle call s:customize_vaffle_mappings()
+    augroup END
+'''
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
