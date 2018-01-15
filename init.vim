@@ -116,6 +116,7 @@ aug vimwork
     au BufNewFile,BufRead *.tag setf html
     au BufNewFile,BufRead *.frm setf vb
     au BufNewFile,BufRead *.dcm setf vb
+    au BufNewFile,BufRead *.bas setf vb
 aug END
 
 function! SetGUI()
