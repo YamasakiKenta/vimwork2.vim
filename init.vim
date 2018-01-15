@@ -124,7 +124,8 @@ function! SetGUI()
     set go-=T
     set go-=m
     set guifontwide=MS_Gothic:h10
-    set guifont=VL_ゴシック:h10:cSHIFTJIS
+    " set guifont=VL_ゴシック:h10:cSHIFTJIS
+    set guifont=Consolas:h10
     nnoremap <A-Space> :<C-u>simalt ~<CR>|"
     "colo hybrid
     " colo iceberg
