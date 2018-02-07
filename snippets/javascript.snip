@@ -1,14 +1,11 @@
 snippet leaflet
     (function(map){
-        var is_back = false;
-        $(window).on('popstate', function(a,b,c,d){
-            if(!is_back){
-                is_back = true;
-                return;
-            }
-            SetViewFromUrl();
+        var _back = false;
+        $(window).on('popstate', function(){
+            if(_back){ SetViewFromUrl(); }
+            _back = true;
         });
-        function SetViewFromUrl(url){
+        function SetViewFromUrl(){
             var url = location.href;
             var pos = url.replace(/.*#/, '').split(',');
             if(isFinite(pos[0])&&isFinite(pos[1])&&isFinite(pos[2])){
@@ -16,7 +13,7 @@ snippet leaflet
             }
         }
         map.on('moveend', function(){
-            is_back = false;
+            _back = false;
             var pos = map.getCenter();
             var z = map.getZoom();
             var str = pos.lat + ',' + pos.lng + ',' + z;
