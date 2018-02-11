@@ -1,30 +1,28 @@
 snippet leaflet
-    // 戻るボタン
-    var isBack = false;
-    $(window).on('popstate', function(a,b,c,d){
-        if(!isBack){
-            isBack = true;
-            return;
+    (function(map){
+        var is_back = false;
+        $(window).on('popstate', function(a,b,c,d){
+            if(!is_back){
+                is_back = true;
+                return;
+            }
+            SetViewFromUrl();
+        });
+        function SetViewFromUrl(url){
+            var url = location.href;
+            var pos = url.replace(/.*#/, '').split(',');
+            if(isFinite(pos[0])&&isFinite(pos[1])&&isFinite(pos[2])){
+                map.setView(pos, pos[2]);
+            }
         }
-        SetViewFromUrl();
-    });
-
-    function SetViewFromUrl(url){
-        var url = location.href;
-        var pos = url.replace(/.*#/, '').split(',');
-        if(isFinite(pos[0])&&isFinite(pos[1])&&isFinite(pos[2])){
-            _map.setView(pos, pos[2]);
+        map.on('moveend', function(){
+            is_back = false;
+            var pos = map.getCenter();
+            var z = map.getZoom();
+            var str = pos.lat + ',' + pos.lng + ',' + z;
+            location.href= location.href.replace(/#.*/,'') + '#' + str;
+        });
+        if(!!location.href.match('#')){
+            SetViewFromUrl();
         }
-    }
-
-    _map.on('moveend', function(){
-        isBack = false;
-        var pos = _map.getCenter();
-        var z = _map.getZoom();
-        var str = pos.lat + ',' + pos.lng + ',' + z;
-        location.href= location.href.replace(/#.*/,'') + '#' + str;
-    });
-
-    if(!!location.href.match('#')){
-        SetViewFromUrl();
-    }
+    })(map);
