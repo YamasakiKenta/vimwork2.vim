@@ -23,3 +23,8 @@ snippet leaflet
             SetViewFromUrl();
         }
     })(map);
+snippet round
+    function round(num,keta){
+        var keta = Math.pow(10, keta);
+        return Math.round(num*keta)/keta;
+    }
