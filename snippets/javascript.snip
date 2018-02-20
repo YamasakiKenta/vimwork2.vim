@@ -12,11 +12,17 @@ snippet leaflet
                 map.setView(pos, pos[2]);
             }
         }
+        function round(num,keta){
+            var keta = Math.pow(10, keta);
+            return Math.round(num*keta)/keta;
+        }
         map.on('moveend', function(){
             _back = false;
             var pos = map.getCenter();
             var z = map.getZoom();
-            var str = pos.lat + ',' + pos.lng + ',' + z;
+            var lat = round(pos.lat,6);
+            var lng = round(pos.lng,6);
+            var str = lat + ',' + lng + ',' + z;
             location.href= location.href.replace(/#.*/,'') + '#' + str;
         });
         if(!!location.href.match('#')){
