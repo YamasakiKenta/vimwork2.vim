@@ -1,0 +1,4 @@
+[[plugins]]
+repo = 'wakatime/vim-wakatime'
+on_idle = 1
+

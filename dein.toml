@@ -137,6 +137,4 @@ repo = 'cocopon/iceberg.vim'
 # repo = 'roxma/nvim-yarp'
 # [[plugins]]
 # repo = 'roxma/vim-hug-neovim-rpc'
-[[plugins]]
-repo = 'wakatime/vim-wakatime'
 
