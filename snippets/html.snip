@@ -8,7 +8,6 @@ alias ons
     <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/js/angular/angular.min.js'></script>
     <script src='https://cdn.rawgit.com/OnsenUI/OnsenUI/1.3.11/build/js/onsenui.min.js'></script>
     -->
-
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsenui.min.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsen-css-components.min.css' />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/js/onsenui.min.js'></script>
@@ -20,15 +19,12 @@ alias bs4 bs
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-
         <title>${1:title}</title>
       </head>
       <body>
         <h1>${1}</h1>
-
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
@@ -57,13 +53,11 @@ snippet leaflet
     <title>GSI Tiles on Leaflet</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-
     <style>
       body {padding: 0; margin: 0}
       html, body, #map {height: 100%; width: 100%;}
     </style>
     </head>
-
     <body>
     <div id="map"></div>
     <script>
@@ -72,6 +66,36 @@ snippet leaflet
       attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
     }).addTo(map);
     map.setView([35.3622222, 138.7313889], 5);
+    (function(map){
+        var _back = false;
+        $(window).on('popstate', function(){
+            if(_back){ SetViewFromUrl(); }
+            _back = true;
+        });
+        function SetViewFromUrl(){
+            var url = location.href;
+            var pos = url.replace(/.*#/, '').split(',');
+            if(isFinite(pos[0])&&isFinite(pos[1])&&isFinite(pos[2])){
+                map.setView(pos, pos[2]);
+            }
+        }
+        function round(num,keta){
+            var keta = Math.pow(10, keta);
+            return Math.round(num*keta)/keta;
+        }
+        map.on('moveend', function(){
+            _back = false;
+            var pos = map.getCenter();
+            var z = map.getZoom();
+            var lat = round(pos.lat,6);
+            var lng = round(pos.lng,6);
+            var str = lat + ',' + lng + ',' + z;
+            location.href= location.href.replace(/#.*/,'') + '#' + str;
+        });
+        if(!!location.href.match('#')){
+            SetViewFromUrl();
+        }
+    })(map);
     </script>
     </body>
     </html>
@@ -132,13 +156,11 @@ snippet meta
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-
     // SEO編
     <title>サイトのタイトル</title>
     <meta name="keywords" content="">
     <meta name="description" content="サイト詳細. 120字以内に収める。最初の40字は大事。">
     <meta name="author" content="製作者の名前or会社名">
-
     // OGP編
     <meta property="og:site_name" content="サイト名">
     <meta property="og:title" content="ogpのタイトル. <title>と文章も文字数も同じにする。">
@@ -150,10 +172,8 @@ snippet meta
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="サイトのURL貼る">
     <meta name="twitter:image" content="ogpのURL貼る">
-
     // favicon編
     <link rel="icon" type="image/x-icon" href="デフォルト">
-
     // Web Clip編
     <link rel="apple-touch-icon" href="Web Clip用のアイコンURL貼る">
     <link rel="apple-touch-icon" sizes="57x57" href="iPhone 3G">
@@ -164,7 +184,6 @@ snippet meta
     <link rel="apple-touch-icon" sizes="144x144" href="Retina版のiPad、iPad mini用、iOS 6以前">
     <link rel="apple-touch-icon" sizes="152x152" href="Retina版のiPad、iPad mini用、iOS 7以降">
     <link rel="apple-touch-icon" sizes="180x180" href="iPhone 6 plus">
-
     <link rel="stylesheet" href="css/style.css">
 snippet pixi
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.5/pixi.min.js"></script>
@@ -203,11 +222,17 @@ snippet react
         <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.19.0/babel.min.js"></script>
         <script type="text/babel">
           // コンポーネントの定義
-
           var helloReact = <div>Hello! React!</div>;
           var content = document.getElementById('content');
           ReactDOM.render(helloReact, content);
         </script>
       </body>
     </html>
-
+snippet uikit
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css" />
+    <!-- jQuery is required -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js"></script>
