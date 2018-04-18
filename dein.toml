@@ -120,6 +120,14 @@ hook_add ='''
 '''
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
 # [[plugins]]
 # repo = 'shougo/deoplete.nvim'
 # hook_add ='''
