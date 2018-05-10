@@ -118,6 +118,8 @@ aug vimwork
     au BufNewFile,BufRead *.frm setf vb
     au BufNewFile,BufRead *.dcm setf vb
     au BufNewFile,BufRead *.bas setf vb
+    " au BufNewFile,BufRead *.vue setf html
+    " au BufNewFile,BufRead *.php setf html
 aug END
 
 function! SetGUI()
