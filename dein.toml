@@ -122,3 +122,5 @@ hook_add ='''
 repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'posva/vim-vue'
+[[plugins]]
+repo = 'othree/yajs.vim'
