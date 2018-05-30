@@ -35,6 +35,22 @@ snippet round
         return Math.round(num*keta)/keta;
     }
 snippet vue
+    const NotFound = { template: '<p>Page not found</p>' }
+    const Home = { template: '<p>Home</p>' }
+    let router = new VueRouter({
+        routes: [
+            { path: '*', component: NotFound },
+            { path: '/', component: Home },
+        ],
+    })
+    router.beforeEach( (to, from, next) => {
+        console.log(to)
+        next()
+    })
+    let app = new Vue({
+        el: '#app',
+        router,
+    })
     var app = new Vue({
         el:'#app',
         data:{
