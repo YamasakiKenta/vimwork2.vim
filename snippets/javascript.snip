@@ -6,34 +6,27 @@ snippet leaflet
             _back = true;
         });
         function SetViewFromUrl(){
-            var url = location.href;
-            var pos = url.replace(/.*#/, '').split(',');
-            if(isFinite(pos[0])&&isFinite(pos[1])&&isFinite(pos[2])){
-                map.setView(pos, pos[2]);
-            }
+            var pos = location.hash.slice(2).split(',');
+            map.setView(pos, pos[2]);
         }
-        function round(num,keta){
-            var keta = Math.pow(10, keta);
-            return Math.round(num*keta)/keta;
+        function round(num, keta){
+            var i = Math.pow(10, keta);
+            return Math.round(num*i) / i;
         }
         map.on('moveend', function(){
-            _back = false;
             var pos = map.getCenter();
-            var z = map.getZoom();
-            var lat = round(pos.lat,6);
-            var lng = round(pos.lng,6);
-            var str = lat + ',' + lng + ',' + z;
-            location.href= location.href.replace(/#.*/,'') + '#' + str;
+            var strs = [
+                round(pos.lat,6),
+                round(pos.lng,6),
+                map.getZoom(),
+            ]
+            location.hash = '#/'+strs.join(',')
+            _back = false;
         });
-        if(!!location.href.match('#')){
+        if(location.hash){
             SetViewFromUrl();
         }
     })(map);
-snippet round
-    function round(num,keta){
-        var keta = Math.pow(10, keta);
-        return Math.round(num*keta)/keta;
-    }
 snippet vue
     const NotFound = { template: '<p>Page not found</p>' }
     const Home = { template: '<p>Home</p>' }
