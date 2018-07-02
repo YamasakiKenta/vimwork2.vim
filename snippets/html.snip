@@ -11,8 +11,8 @@ alias ons
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsenui.min.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/css/onsen-css-components.min.css' />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/onsen/2.0.0-beta.2/js/onsenui.min.js'></script>
-snippet bsm
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+snippet bscss
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 snippet bootstrap4
 alias bs4 bs
@@ -42,7 +42,7 @@ snippet prefixfree
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 snippet viewport
 alias vp view
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 snippet knockout
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
 snippet highstock
@@ -69,41 +69,9 @@ snippet leaflet
       attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
     }).addTo(map);
     map.setView([35.3622222, 138.7313889], 5);
-    (function(map){
-        var _back = false;
-        $(window).on('popstate', function(){
-            if(_back){ SetViewFromUrl(); }
-            _back = true;
-        });
-        function SetViewFromUrl(){
-            var pos = location.href.replace(/.*#/, '').split(',');
-            map.setView(pos, pos[2]);
-        }
-        function round(num,keta){
-            var keta = Math.pow(10, keta);
-            return Math.round(num*keta)/keta;
-        }
-        map.on('moveend', function(){
-            _back = false;
-            var pos = map.getCenter();
-            var strs = [
-                round(pos.lat,6),
-                round(pos.lng,6),
-                map.getZoom()
-            ]
-            location.hash = '#/' + strs.join(',');
-        });
-        if(location.hash){
-            SetViewFromUrl();
-        }
-    })(map);
     </script>
     </body>
     </html>
-snippet jquery-ui
-alias jqueryui
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 snippet d3
     <script src="https://d3js.org/d3.v3.min.js"></script>
 snippet angularJS
