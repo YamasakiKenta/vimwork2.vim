@@ -16,9 +16,8 @@ if dein#check_install()
 endif
 
 " not dein
-nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
-nnoremap <leader>fd :<C-u>let @+ = getcwd()\|echo @+|"
+nnoremap <leader>fd :<C-u>!start %:h
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
 nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"
