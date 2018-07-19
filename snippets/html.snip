@@ -250,3 +250,33 @@ alias footer
   <nav class="navbar fixed-bottom navbar-dark bg-primary">
     <a class="navbar-brand" href="#!">Fixed bottom</a>
   </nav>
+snippet login
+  created () {
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var app = this
+    firebase.auth().onAuthStateChanged( function (user) {
+      app.user = user
+      if(!user){
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        ui.start('#firebaseui-auth-container', {
+          signInSuccessUrl : '/',
+          signInFlow: 'popup',
+          signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          ],
+          callbacks : {
+            signInSuccessWithAuthResult : function (res) {
+              return false
+            }
+          }
+        })
+      } else {
+        location.href = '/'
+      }
+    })
+  }
+snippet icon
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <span class="oi oi-menu"></span>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <i class="material-icons">face</i>

@@ -30,10 +30,18 @@ snippet leaflet
 snippet vue
     const NotFound = { template: '<p>Page not found</p>' }
     const Home = { template: '<p>Home</p>' }
+    const Login = { template: '#login' }
+    <script type="text/x-template" id="home">
+      <div>
+        Home <br/>
+        <router-link to="/history">History</router-link>
+      </div>
+    </script>
     let router = new VueRouter({
         routes: [
             { path: '*', component: NotFound },
             { path: '/', component: Home },
+            { path: '/', component: Login },
         ],
     })
     router.beforeEach( (to, from, next) => {
