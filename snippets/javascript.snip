@@ -41,21 +41,17 @@ snippet vue
         next()
     })
     let app = new Vue({
-        el: '#app',
+        el : '#app',
         router,
     })
+    // simple -->
     var app = new Vue({
-        el:'#app',
-        data:{
-            msg: ''
-        },
-        methods:{
-        },
-        computed:{
-        },
-        created () {
-        },
-        watch () {
-        },
+        el : '#app',
+        data () { },
+        methods : { },
+        computed : { },
+        created () { },
+        mounted () { },
+        watch () { },
         
     });
