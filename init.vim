@@ -7,7 +7,6 @@ exec 'set rtp+=' . s:dein_repo_dir
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
   call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
-  call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein_lazy.toml'), {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
@@ -16,6 +15,8 @@ if dein#check_install()
 endif
 
 " not dein
+nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
+nnoremap <leader>e :vs %:h
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
 nnoremap <leader>fd :<C-u>!start %:h
 nnoremap <S-Space> za|"
@@ -44,7 +45,6 @@ function! s:addSearch(...)
         let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
     endif
 endfunction
-nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
 
 " diff
 nnoremap <a-up> [c
