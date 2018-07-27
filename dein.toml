@@ -1,14 +1,3 @@
-# [[plugins]]
-# repo = 'nathanaelkane/vim-indent-guides'
-# on_if = '''
-#     has('gui')
-# '''
-# hook_add ='''
-#     let g:indent_guides_enable_on_vim_startup=1
-#     let g:indent_guides_start_level=2
-#     let g:indent_guides_color_change_percent = 5
-#     let g:indent_guides_guide_size = 1
-# '''
 [[plugins]]
 repo = 'Shougo/dein.vim'
 [[plugins]]
@@ -37,8 +26,6 @@ repo = 'Shougo/neosnippet-snippets'
 on_source = 'neosnippet.vim'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-[[plugins]]
-repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'thinca/vim-qfreplace'
 [[plugins]]
@@ -93,20 +80,6 @@ hook_add = '''
     let g:Align_xstrlen = 3
 '''
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = '''
-    nmap <leader>d [denite]
-    nnoremap [denite] :<c-u>Denite
-    nnoremap [denite]g :<c-u>Denite file_rec/git
-    nnoremap [denite]j :<c-u>Denite jump
-    nnoremap [denite]m :<c-u>Denite buffer file_old_win
-    call denite#custom#var('file_rec/git', 'command',
-                \ ['git', 'ls-files', '-co', '--exclude-standard'])
-    call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-    call denite#custom#map('insert', '<Up>', '<denite:move_to_previous_line>', 'noremap')
-    call denite#custom#map('insert', '<Down>', '<denite:move_to_next_line>', 'noremap')
-'''
-[[plugins]]
 repo = 'cocopon/vaffle.vim'
 hook_add ='''
     function! s:customize_vaffle_mappings() abort
@@ -118,9 +91,36 @@ hook_add ='''
         autocmd FileType vaffle call s:customize_vaffle_mappings()
     augroup END
 '''
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
 # [[plugins]]
 # repo = 'posva/vim-vue'
 # [[plugins]]
 # repo = 'othree/yajs.vim'
+# [[plugins]]
+# repo = 'nathanaelkane/vim-indent-guides'
+# on_if = '''
+#     has('gui')
+# '''
+# hook_add ='''
+#     let g:indent_guides_enable_on_vim_startup=1
+#     let g:indent_guides_start_level=2
+#     let g:indent_guides_color_change_percent = 5
+#     let g:indent_guides_guide_size = 1
+# '''
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+# hook_add = '''
+#     nmap <leader>d [denite]
+#     nnoremap [denite] :<c-u>Denite
+#     nnoremap [denite]g :<c-u>Denite file_rec/git
+#     nnoremap [denite]j :<c-u>Denite jump
+#     nnoremap [denite]m :<c-u>Denite buffer file_old_win
+#     call denite#custom#var('file_rec/git', 'command',
+#                 \ ['git', 'ls-files', '-co', '--exclude-standard'])
+#     call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+#     call denite#custom#map('insert', '<Up>', '<denite:move_to_previous_line>', 'noremap')
+#     call denite#custom#map('insert', '<Down>', '<denite:move_to_next_line>', 'noremap')
+# '''
+# [[plugins]]
+# repo = 'cespare/vim-toml'

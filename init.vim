@@ -15,9 +15,14 @@ if dein#check_install()
 endif
 
 " not dein
-nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
-nnoremap <leader>e :vs %:h
+" nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
+nnoremap <leader>b :new<cr>i<c-r>=v:oldfiles<cr><c-r>filter(map(getbufinfo(), "v:val['name']"), "v:val!=''")<cr><esc>:sort u<cr>ddgg
+nnoremap <leader>v :<c-u>/ ls<home>browse filter /
+nnoremap <leader>e : <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>/<home>e
+" nnoremap <leader>f :e! <c-r>=substitute(expand("<cfile>"), '\', '/', 'g')<cr>/<home>
+nnoremap <leader>c :cd %:h<tab>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
+nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
 nnoremap <leader>fd :<C-u>!start %:h
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
