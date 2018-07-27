@@ -16,7 +16,7 @@ endif
 
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
-nnoremap <leader>b :new<cr>i<c-r>=v:oldfiles<cr><c-r>filter(map(getbufinfo(), "v:val['name']"), "v:val!=''")<cr><esc>:sort u<cr>ddgg
+nnoremap <leader>b :new [files]<cr>i<c-r>=v:oldfiles<cr><c-r>filter(map(getbufinfo(), "v:val['name']"), "v:val!=''")<cr><esc>:sort u<cr>ddgg:set bt=nofile<cr>/
 nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>e : <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>/<home>e
 " nnoremap <leader>f :e! <c-r>=substitute(expand("<cfile>"), '\', '/', 'g')<cr>/<home>
