@@ -14,11 +14,12 @@ if dein#check_install()
   call dein#install()
 endif
 
-command! MRU call <SID>mru()
+command! Mru call <SID>mru()
 function! s:mru()
-  new [MRU]
+  sp [mru]
   call setline(1, v:oldfiles)
   call setline(1, filter(map(getbufinfo(), "v:val['name']"), "v:val!=''"))
+  :v/\./d
   sort u
   norm ddgg
   map <buffer> <cr> gf
@@ -28,7 +29,7 @@ endfunction
 
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
-nnoremap <leader>bb :MRU<cr>
+nnoremap <leader>bb<cr> :Mru<cr>:/d<home>v/
 nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>ff :e <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
