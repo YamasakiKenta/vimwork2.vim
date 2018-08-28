@@ -29,6 +29,7 @@ endfunction
 
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
+nnoremap <f5> :<c-u>QuickRun<cr>
 nnoremap <leader>bb<cr> :Mru<cr>:/d<home>v/
 nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>ff :e <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>
@@ -63,9 +64,9 @@ function! s:addSearch(...)
 endfunction
 
 " diff
-nnoremap <a-up> [c
-nnoremap <a-down> ]c
-nnoremap <f5> :diffupdate<cr>
+" nnoremap <a-up> [c
+" nnoremap <a-down> ]c
+" nnoremap <f5> :diffupdate<cr>
 
 " finish
 
