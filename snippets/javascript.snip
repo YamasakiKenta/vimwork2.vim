@@ -27,7 +27,7 @@ snippet leaflet
             SetViewFromUrl();
         }
     })(map);
-snippet vue
+snippet vueroot
     const NotFound = { template: '<p>Page not found</p>' }
     const Home = { template: '<p>Home</p>' }
     const Login = { template: '#login' }
@@ -52,7 +52,7 @@ snippet vue
         el : '#app',
         router,
     })
-    // simple -->
+snippet vue
     var app = new Vue({
         el : '#app',
         data () { },
@@ -63,3 +63,6 @@ snippet vue
         watch () { },
         
     });
+snippet localstrage
+    localStorage.setItem('root', JSON.stringify(this.root))
+    JSON.parse(localStorage.setItem('root'))
