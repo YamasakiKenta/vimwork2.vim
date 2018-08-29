@@ -35,7 +35,7 @@ nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>ff :e <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
 nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
-nnoremap <leader>fd :<C-u>!start %:h
+nnoremap <leader>fd :<C-u> %:h<Home>!start 
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
 nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"

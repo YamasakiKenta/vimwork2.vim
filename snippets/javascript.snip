@@ -27,7 +27,8 @@ snippet leaflet
             SetViewFromUrl();
         }
     })(map);
-snippet vueroot
+snippet vue-rooter
+alias vuerr
     const NotFound = { template: '<p>Page not found</p>' }
     const Home = { template: '<p>Home</p>' }
     const Login = { template: '#login' }
@@ -55,13 +56,20 @@ snippet vueroot
 snippet vue
     var app = new Vue({
         el : '#app',
-        data () { },
-        methods : { },
-        computed : { },
-        created () { },
-        mounted () { },
-        watch () { },
-        
+        data () {
+          return {
+          }
+        },
+        watch: {
+        },
+        computed : {
+        },
+        methods: {
+        },
+        created () {
+        },
+        mounted () {
+        },
     });
 snippet localstrage
     localStorage.setItem('root', JSON.stringify(this.root))
