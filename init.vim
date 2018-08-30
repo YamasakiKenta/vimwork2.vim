@@ -16,7 +16,7 @@ endif
 
 command! Mru call <SID>mru()
 function! s:mru()
-  e [mru]
+  sp [mru]
   call setline(1, v:oldfiles)
   call setline(1, filter(map(getbufinfo(), "v:val['name']"), "v:val!=''"))
   :v/\./d
@@ -29,7 +29,8 @@ endfunction
 
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
-nnoremap <leader>mb<cr> :Mru<cr>:/d<home>v/
+nnoremap <f5> :<c-u>QuickRun<cr>
+nnoremap <leader>bb<cr> :Mru<cr>:/d<home>v/
 nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>ff :e <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
@@ -66,9 +67,9 @@ function! s:addSearch(...)
 endfunction
 
 " diff
-nnoremap <a-up> [c
-nnoremap <a-down> ]c
-nnoremap <f5> :diffupdate<cr>
+" nnoremap <a-up> [c
+" nnoremap <a-down> ]c
+" nnoremap <f5> :diffupdate<cr>
 
 " finish
 
