@@ -28,16 +28,10 @@ snippet leaflet
         }
     })(map);
 snippet vue-rooter
-alias vuerr
+alias vuerr vueroot
     const NotFound = { template: '<p>Page not found</p>' }
     const Home = { template: '<p>Home</p>' }
     const Login = { template: '#login' }
-    <script type="text/x-template" id="home">
-      <div>
-        Home <br/>
-        <router-link to="/history">History</router-link>
-      </div>
-    </script>
     let router = new VueRouter({
         routes: [
             { path: '*', component: NotFound },
@@ -53,7 +47,6 @@ alias vuerr
         el : '#app',
         router,
     })
-    // simple -->
 snippet vue
     var app = new Vue({
         el : '#app',
