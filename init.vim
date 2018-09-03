@@ -14,9 +14,21 @@ if dein#check_install()
   call dein#install()
 endif
 
-command! GFileLs call <SID>gitFileLs()
-function! s:gitFileLs()
-  e [git_ls_files]
+command! GDir call <SID>gDir()
+function! s:gDir()
+  e [Git]
+  call setline(1, split(system('git ls-files'), "\n"))
+  %s/[^/]*$
+  sort u
+  norm ggdd
+  map <buffer> <cr> gf
+  map <buffer> q :q<cr>
+  setl bt=nofile
+endfunction
+
+command! GFile call <SID>gitFile()
+function! s:gitFile()
+  e [Git]
   call setline(1, split(system('git ls-files'), "\n"))
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
