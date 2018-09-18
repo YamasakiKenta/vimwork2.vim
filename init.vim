@@ -41,6 +41,7 @@ function! s:mru()
   call setline(1, v:oldfiles)
   call setline(1, filter(map(getbufinfo(), "v:val['name']"), "v:val!=''"))
   :v/\./d
+  :%s/.*\\\zs.*
   sort u
   norm ddgg
   map <buffer> <cr> gf

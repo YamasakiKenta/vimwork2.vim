@@ -1,6 +1,4 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-[[plugins]]
 repo = 'mattn/emmet-vim'
 hook_add = '''
     let g:user_emmet_settings = {
@@ -32,8 +30,6 @@ repo = 'thinca/vim-qfreplace'
 repo = 'fuenor/qfixgrep'
 hook_add = '''
     let QFixWin_EnableMode = 1
-    let g:QFixWin_QuickFixTitleReg = '\cQuickfix'
-    let g:QFixWin_LocationListTitleReg = '\cLocation'
 '''
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -122,5 +118,5 @@ hook_add ='''
 #     call denite#custom#map('insert', '<Up>', '<denite:move_to_previous_line>', 'noremap')
 #     call denite#custom#map('insert', '<Down>', '<denite:move_to_next_line>', 'noremap')
 # '''
-# [[plugins]]
-# repo = 'cespare/vim-toml'
+[[plugins]]
+repo = 'cespare/vim-toml'
