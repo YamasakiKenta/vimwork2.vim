@@ -49,6 +49,15 @@ function! s:mru()
   setl bt=nofile
 endfunction
 
+command! Repos call <SID>repos()
+function! s:repos()
+  e [Repos]
+  call setline(1, g:repos)
+  map <buffer> <cr> gf
+  map <buffer> q :q<cr>
+  setl bt=nofile
+endfunction
+
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
 nnoremap <f5> :<c-u>QuickRun<cr>
