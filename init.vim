@@ -14,25 +14,13 @@ if dein#check_install()
   call dein#install()
 endif
 
-command! GDir call <SID>gDir()
-function! s:gDir()
-  e [Git]
-  call setline(1, split(system('git ls-files'), "\n"))
-  %s/[^/]*$
-  sort u
-  norm ggdd
-  map <buffer> <cr> gf
-  map <buffer> q :q<cr>
-  setl bt=nofile
-endfunction
-
 command! GFile call <SID>gitFile()
 function! s:gitFile()
   e [Git]
   call setline(1, split(system('git ls-files'), "\n"))
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
-  setl bt=nofile
+  setlocal bufhidden=delete
 endfunction
 
 command! Mru call <SID>mru()
@@ -40,13 +28,15 @@ function! s:mru()
   e [mru]
   call setline(1, v:oldfiles)
   call setline(1, filter(map(getbufinfo(), "v:val['name']"), "v:val!=''"))
-  :v/\./d
-  :%s/.*\\\zs.*
-  sort u
-  norm ddgg
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
-  setl bt=nofile
+  setlocal bufhidden=delete
+  setlocal buftype=nowrite
+  setlocal filetype=vaffle
+  setlocal matchpairs=
+  setlocal nobuflisted
+  setlocal noswapfile
+  setlocal nowrap
 endfunction
 
 command! Repos call <SID>repos()
@@ -55,7 +45,7 @@ function! s:repos()
   call setline(1, g:repos)
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
-  setl bt=nofile
+  setlocal bufhidden=delete
 endfunction
 
 " not dein
