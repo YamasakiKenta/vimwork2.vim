@@ -32,7 +32,7 @@ function! s:mru()
   map <buffer> q :q<cr>
   setlocal bufhidden=delete
   setlocal buftype=nowrite
-  setlocal filetype=vaffle
+  setlocal filetype=txt
   setlocal matchpairs=
   setlocal nobuflisted
   setlocal noswapfile
@@ -46,6 +46,8 @@ function! s:repos()
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
   setlocal bufhidden=delete
+  setlocal buftype=nowrite
+  setlocal filetype=txt
 endfunction
 
 " not dein
