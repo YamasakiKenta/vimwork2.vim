@@ -137,8 +137,7 @@ set fdm=marker
 set tabstop=2
 set shiftwidth=2
 set expandtab
-" set list lcs=tab:.\ |
-set list lcs=tab:\ \ |
+set list lcs=tab:\.\ |
 set nf=""
 set backupdir=~/.cache/bak
 if !has('nvim')
