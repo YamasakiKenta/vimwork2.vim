@@ -21,6 +21,7 @@ function! s:gitFile()
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
   setlocal bufhidden=delete
+  setlocal buftype=nowrite
 endfunction
 
 command! Mru call <SID>mru()
@@ -161,6 +162,8 @@ aug vimwork
     au BufNewFile,BufRead *.dcm setf vb
     au BufNewFile,BufRead *.bas setf vb
     au BufNewFile,BufRead *.vue setf html
+    au BufNewFile,BufRead *.tpl setf php
+    au BufNewFile,BufRead *.inc setf php
     " au BufNewFile,BufRead *.php setf html
 aug END
 
