@@ -135,8 +135,8 @@ set nowrap
 set noswapfile
 set number
 set fdm=marker
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set list lcs=tab:\.\ |
 set nf=""
