@@ -1,7 +1,7 @@
 " dein
 let s:dein_repo_dir = expand('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
 exec 'set rtp+=' . s:dein_repo_dir
 if dein#load_state('~/.cache/dein')
@@ -43,6 +43,9 @@ endfunction
 command! Repos call <SID>repos()
 function! s:repos()
   e [Repos]
+  if exists(g:repos)
+    exit function
+  endif
   call setline(1, g:repos)
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
@@ -80,14 +83,14 @@ vnoremap / "ay/<c-r>a<cr><c-o>|"
 let g:plugin_cmdex_disable = 1
 cnoremap <C-X> <C-R>=<SID>GetBufferDirectory()<CR>
 function! s:GetBufferDirectory()
-    let dir = expand('%:p:h')
-    return dir . (exists('+shellslash') && !&shellslash ? '\' : '/')
+  let dir = expand('%:p:h')
+  return dir . (exists('+shellslash') && !&shellslash ? '\' : '/')
 endfunction
 command! -narg=* AddSearch call <SID>addSearch(<f-args>)
 function! s:addSearch(...)
-    if a:0 > 0
-        let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
-    endif
+  if a:0 > 0
+    let @/ = @/.'\|\<'.join(a:000,'\>\|\<').'\>'
+  endif
 endfunction
 
 " diff
@@ -135,55 +138,38 @@ set nowrap
 set noswapfile
 set number
 set fdm=marker
-set tabstop=4
-set shiftwidth=4
+set ts=2
+set sw=2
 set expandtab
 set list lcs=tab:\.\ |
 set nf=""
 set backupdir=~/.cache/bak
 if !has('nvim')
-    set viminfo+=n~/.cache/viminfo
+  set viminfo+=n~/.cache/viminfo
 endif
 
 if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir))
+  call mkdir(expand(&backupdir))
 endif
 if has('persistent_undo')
-    set noudf
-    set undodir=~/.cache/undo
-    if !isdirectory(expand(&undodir))
-        call mkdir(expand(&undodir))
-    endif
+  set noudf
+  set undodir=~/.cache/undo
+  if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir))
+  endif
 endif
 aug vimwork
-    au!
-    au BufNewFile,BufRead *.tag setf html
-    au BufNewFile,BufRead *.frm setf vb
-    au BufNewFile,BufRead *.dcm setf vb
-    au BufNewFile,BufRead *.bas setf vb
-    au BufNewFile,BufRead *.vue setf html
-    au BufNewFile,BufRead *.tpl setf php
-    au BufNewFile,BufRead *.inc setf php
-    au BufNewFile,BufRead *.ts setf javascript
-    " au BufNewFile,BufRead *.php setf html
+  au!
+  au BufNewFile,BufRead *.tag setf html
+  au BufNewFile,BufRead *.frm setf vb
+  au BufNewFile,BufRead *.dcm setf vb
+  au BufNewFile,BufRead *.bas setf vb
+  au BufNewFile,BufRead *.vue setf html
+  au BufNewFile,BufRead *.tpl setf php
+  au BufNewFile,BufRead *.inc setf php
+  au BufNewFile,BufRead *.ts setf javascript
+  " au BufNewFile,BufRead *.php setf html
 aug END
-
-function! SetGUI()
-    set nocursorline
-    set enc=utf-8
-    set go-=T
-    set go-=m
-    set guifontwide=MS_Gothic:h10
-    " set guifont=VL_ゴシック:h10:cSHIFTJIS
-    set guifont=Consolas:h10
-    nnoremap <A-Space> :<C-u>simalt ~<CR>|"
-    "colo hybrid
-    " colo iceberg
-    source $VIMRUNTIME/delmenu.vim
-    set langmenu=ja_jp.utf-8
-    source $VIMRUNTIME/menu.vim
-    set vb t_vb=
-endfunction
 
 source $VIMRUNTIME/macros/matchit.vim
 
@@ -192,3 +178,4 @@ set vb t_vb=
 
 filetype plugin indent on
 syntax enable
+" vim:set ts=2 sw=2 :

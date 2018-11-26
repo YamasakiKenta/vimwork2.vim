@@ -120,3 +120,4 @@ hook_add ='''
 # '''
 [[plugins]]
 repo = 'cespare/vim-toml'
+# vim:set ts=2 sw=2 :
