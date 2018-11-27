@@ -6,7 +6,7 @@ endif
 exec 'set rtp+=' . s:dein_repo_dir
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
-  call dein#load_toml(expand('~/.cache/plugin/vimwork2.vim/dein.toml'), {'lazy': 0})
+  call dein#load_toml(expand('~/.cache/vimwork2.vim/dein.toml'), {'lazy': 0})
   call dein#end()
   call dein#save_state()
 endif

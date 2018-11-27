@@ -58,5 +58,12 @@ snippet vue
       // methods watch computed created mounted
     });
 snippet localstrage
+alias save
     localStorage.setItem('root', JSON.stringify(this.root))
-    JSON.parse(localStorage.setItem('root'))
+    JSON.parse(localStorage.getItem('root'))
+    save: function(key, val) {
+      localStorage.setItem(key, JSON.stringify(val))
+    },
+    load: function(key) {
+      return JSON.parse(localStorage.getItem(key))
+    }
