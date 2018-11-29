@@ -40,20 +40,6 @@ function! s:mru()
   setlocal nowrap
 endfunction
 
-command! Repos call <SID>repos()
-function! s:repos()
-  e [Repos]
-  if exists(g:repos)
-    exit function
-  endif
-  call setline(1, g:repos)
-  map <buffer> <cr> gf
-  map <buffer> q :q<cr>
-  setlocal bufhidden=delete
-  setlocal buftype=nowrite
-  setlocal filetype=txt
-endfunction
-
 " not dein
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
 " nnoremap <f5> :<c-u>QuickRun<cr>

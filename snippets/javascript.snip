@@ -1,21 +1,23 @@
 snippet leaflet
     (function(map){
-        var _back = false;
-        $(window).on('popstate', function(){
-            if(_back){ SetViewFromUrl(); }
-            _back = true;
-        });
-        function SetViewFromUrl(){
-            var pos = location.hash.slice(2).split(',');
+        let _back = false;
+        window.onpopstate = function() {
+          if(_back){ 
+            SetViewFromUrl(); 
+          }
+          _back = true;
+        }
+        function SetViewFromUrl() {
+            let pos = location.hash.slice(2).split(',');
             map.setView(pos, pos[2]);
         }
         function round(num, keta){
-            var i = Math.pow(10, keta);
+            let i = Math.pow(10, keta);
             return Math.round(num*i) / i;
         }
         map.on('moveend', function(){
-            var pos = map.getCenter();
-            var strs = [
+            let pos = map.getCenter();
+            let strs = [
                 round(pos.lat,6),
                 round(pos.lng,6),
                 map.getZoom(),
@@ -23,9 +25,10 @@ snippet leaflet
             location.hash = '#/'+strs.join(',')
             _back = false;
         });
-        if(location.hash){
-            SetViewFromUrl();
+        if(location.hash==''){
+          location.hash = '#/34.928305,134.008312,12'
         }
+        SetViewFromUrl();
     })(map);
 snippet vue-rooter
 alias vuer
