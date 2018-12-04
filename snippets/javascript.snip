@@ -67,6 +67,7 @@ alias save
     save: function(key, val) {
       localStorage.setItem(key, JSON.stringify(val))
     },
-    load: function(key) {
+    load: function(key, val) {
+      if(!localStorage.hasOwnProperty(key)){ return val }
       return JSON.parse(localStorage.getItem(key))
     }
