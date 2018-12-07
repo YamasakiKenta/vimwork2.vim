@@ -52,7 +52,8 @@ snippet highstock
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 snippet charts
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-snippet leaflet
+snippet !leaflet
+alias leaflet
     <!DOCTYPE html>
     <html>
     <head>
@@ -68,11 +69,30 @@ snippet leaflet
     <body>
     <div id="map"></div>
     <script>
-    var map = L.map('map');
+    var map = L.map('map', {
+      preferCanvas: true,
+    });
     L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
       attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
     }).addTo(map);
+
     map.setView([35.3622222, 138.7313889], 5);
+
+    // 他の地図
+    const base_opt = {
+      attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
+    }
+    let base
+    let bases = L.control.layers(null, null, { collapsed: false }).addTo(map)
+    base = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', base_opt).addTo(self.map)
+    bases.addBaseLayer(base, '標準')
+    base = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', base_opt)
+    bases.addBaseLayer(base, '淡色')
+    base = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg', base_opt)
+    bases.addBaseLayer(base, '写真')
+    base = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/blank/{z}/{x}/{y}.png', base_opt)
+    bases.addBaseLayer(base, '白')
+
     </script>
     </body>
     </html>
