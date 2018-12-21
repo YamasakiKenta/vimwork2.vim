@@ -1,8 +1,0 @@
-snippet ten
-    saver = tf.train.Saver()
-    saver.restore(sess, "./model.ckpt")
-    # saver.save(sess, "./model.ckpt")
-
-    writer = tf.summary.FileWriter('./logs/aaa', sess.graph)
-
-
