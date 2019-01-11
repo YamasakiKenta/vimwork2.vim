@@ -45,13 +45,10 @@ endfunction
 " nnoremap <f5> :<c-u>QuickRun<cr>
 nnoremap <leader>bb<cr> :Mru<cr>:/d<home>v/
 nnoremap <leader>v :<c-u>/ ls<home>browse filter /
-nnoremap <leader>ff :e <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr>
+nnoremap <leader>ff : <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr><home>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
 nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
 nnoremap <leader>fd :<C-u> %:h<Home>!start 
-" nnoremap <leader>fe :<C-u>e %:h<Home>
-" nnoremap <leader>fc :<C-u>cd %:h<Home>
-" nnoremap <leader>e :<C-u>e %:h<Home>
 nnoremap <S-Space> za|"
 nnoremap <ESC><ESC> :<C-u>noh<CR><ESC>|"
 nnoremap <C-n> :<C-u>cn<CR>:e<cr>|"
