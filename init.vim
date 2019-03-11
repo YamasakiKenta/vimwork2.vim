@@ -44,7 +44,7 @@ endfunction
 " nnoremap <leader>b :<c-u>/ oldfiles<home>browse filter /
 " nnoremap <f5> :<c-u>QuickRun<cr>
 nnoremap <leader>bb<cr> :Mru<cr>:/d<home>v/
-nnoremap <leader>v :<c-u>/ ls<home>browse filter /
+" nnoremap <leader>v :<c-u>/ ls<home>browse filter /
 nnoremap <leader>ff : <c-r>=substitute(expand("%:h"), '\', '/', 'g')<cr><home>
 nnoremap <leader>fp :<C-u>let @+ = expand("%:p")\|echo @+|"
 nnoremap <leader>ft :<C-u>let @+ = expand("%:t")\|echo @+|"
@@ -62,7 +62,7 @@ vnoremap < <gv|"
 vnoremap > >gv|"
 " nnoremap go yypC
 " nnoremap gO yyPC
-vnoremap / "ay/<c-r>a<cr><c-o>|"
+" vnoremap / "ay/<c-r>a<cr><c-o>|"
 let g:plugin_cmdex_disable = 1
 cnoremap <C-X> <C-R>=<SID>GetBufferDirectory()<CR>
 function! s:GetBufferDirectory()
