@@ -16,12 +16,15 @@ endif
 
 command! GFile call <SID>gitFile()
 function! s:gitFile()
-  e [Git]
+  Gcd
+  keepjumps e [Git]
+  setlocal buflisted
+  setlocal bufhidden=delete
+  setlocal buftype=nofile
   call setline(1, split(system('git ls-files'), "\n"))
+  setlocal readonly
   map <buffer> <cr> gf
   map <buffer> q :q<cr>
-  setlocal bufhidden=delete
-  setlocal buftype=nowrite
 endfunction
 
 command! Mru call <SID>mru()
