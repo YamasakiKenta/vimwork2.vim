@@ -1,6 +1,4 @@
 [[plugins]]
-repo = 'sheerun/vim-polyglot'
-[[plugins]]
 repo = 'mattn/emmet-vim'
 hook_add = '''
     let g:user_emmet_settings = {
