@@ -1,5 +1,3 @@
-# [[plugins]]
-# repo = 'sheerun/vim-polyglot'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 hook_add = '''
