@@ -17,13 +17,14 @@ endif
 command! GFile call <SID>gitFile()
 function! s:gitFile()
   Gcd
-  keepjumps e [Git]
-  setlocal buflisted
+  e [Git]
+  " setlocal buflisted
+  setlocal buftype=nowrite
   setlocal bufhidden=delete
-  setlocal buftype=nofile
+  setlocal noswapfile
   call setline(1, split(system('git ls-files'), "\n"))
   setlocal readonly
-  map <buffer> <cr> gf
+  map <buffer> <cr> :e <cfile><CR>
   map <buffer> q :q<cr>
 endfunction
 
