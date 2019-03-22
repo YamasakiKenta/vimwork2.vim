@@ -153,6 +153,7 @@ aug vimwork
   au BufNewFile,BufRead *.tpl setf php
   au BufNewFile,BufRead *.inc setf php
   au BufNewFile,BufRead *.ts setf javascript
+  au BufNewFile,BufRead *.vue setf javascript
   au FileType javascript setl ts=2 sw=2
   " au BufNewFile,BufRead *.php setf html
 aug END
