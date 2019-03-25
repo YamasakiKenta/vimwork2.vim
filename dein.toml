@@ -16,8 +16,8 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 hook_add = '''
-    let g:neosnippet#snippets_directory = expand('~/.cache/snippets')
     imap <C-Space> <PLUG>(neosnippet_expand_or_jump)
+    let g:neosnippet#snippets_directory = expand('~/dropbox/snippets')
 '''
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
